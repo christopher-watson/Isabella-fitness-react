@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./containers/Home";
+import Clients from "./containers/Clients";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/clients" component={Clients} />
+        <Route
+          render={() => <h1 className="text-center">Page Not Found!</h1>}
+        />
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;
