@@ -3,6 +3,6 @@ const responseRoutes = require('./responseRoutes');
 const backupRoutes = require('./backupRoutes');
 
 router.use('/clients', responseRoutes);
-router.use('/clients', backupRoutes);
+router.use('/backup', backupRoutes);
 
 module.exports = router;

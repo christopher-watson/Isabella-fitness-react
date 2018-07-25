@@ -5,7 +5,7 @@ const responseController = require('../../controllers/responseController');
 router
   .route("/")
   .get(responseController.findAll)
-  .post(responseController.create);
+  .post(responseController.create)
 
 // ../api/clients/:id
 router
@@ -15,3 +15,4 @@ router
   .delete(responseController.remove);
 
 module.exports = router;
+
