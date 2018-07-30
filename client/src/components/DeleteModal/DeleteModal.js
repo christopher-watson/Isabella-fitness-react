@@ -16,8 +16,10 @@ export default class DeleteModal extends React.Component {
   };
 
   deleteResponse = (p) => {
-    console.log(p);
+    // console.log(p);
     API.deleteResponse(p)
+    this.onCloseModal();
+    window.location.reload();
   };
 
   render( ) {
