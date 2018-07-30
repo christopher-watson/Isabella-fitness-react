@@ -1,7 +1,8 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
+import API from "../../utils/API";
 
-export default class Centered extends React.Component {
+export default class DeleteModal extends React.Component {
   state = {
     open: false,
   };
@@ -14,18 +15,24 @@ export default class Centered extends React.Component {
     this.setState({ open: false });
   };
 
-  render() {
+  deleteResponse = (p) => {
+    console.log(p);
+    API.deleteResponse(p)
+  };
+
+  render( ) {
+    // console.log(this.props)
     const { open } = this.state;
     return (
       <div className="example">
         <button className="btn btn-danger mt-2" onClick={this.onOpenModal}>
           Delete
         </button>{' '}
-        <Modal open={open} onClose={this.onCloseModal} center>
+        <Modal open={open} onClose={this.onCloseModal} center="true">
           <h4>Delete Response</h4>
           <p>Are you sure you want to delete this response?</p>
-          <button className="btn btn-success offset-7" onClick={this.onCloseModal} center>Yes</button>
-          <button className="btn btn-primary ml-2" onClick={this.onCloseModal} center>Cancel</button>
+          <button className="btn btn-success offset-7" onClick={() => this.deleteResponse(this.props._id)} center="true">Yes</button>
+          <button className="btn btn-primary ml-2" onClick={this.onCloseModal} center="true">Cancel</button>
         </Modal>
       </div>
     );

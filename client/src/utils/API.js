@@ -13,7 +13,7 @@ export default {
   },
 
   // delete responses
-  responseDelete: function(id) {
+  deleteResponse: function(id) {
     return axios.delete(`/api/clients/${id}`)
   }
 }

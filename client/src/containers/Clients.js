@@ -32,17 +32,14 @@ class Clients extends Component {
             <h1>Client Responses</h1>
           </div>
         </div>
-
         <div className="container-fluid">
           <div className="row justify-content-center">
-
             {/* Response result container */}
             <div className="col-8">
               <h2>{this.state.responses.length
                 ? "Client Response Results"
                 : "No Client Responses to Display"}
               </h2>
-
               <ul className="list-group list-group-flush">
                 {this.state.responses.map(response => (
                     <li key={response._id} className="list-group-item justify-content-between align-items-center">
@@ -52,14 +49,14 @@ class Clients extends Component {
                         <a className="userEmail" href={`mailto:${response.email}`}>{response.email}</a>
                       </p>
                       <p>{response.message}</p>
-                      <DeleteModal />
+                      <DeleteModal {...response}/>
                     </li>
                   ))}
               </ul>
             </div>
           </div>
         </div>
-      
+    
       </div>
     )
   }
