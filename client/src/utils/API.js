@@ -3,8 +3,12 @@ import axios from "axios";
 export default {
 
   // save resopnses
-  responseSave: function(responseInfo) {
+  responseSubmit: function(responseInfo) {
     return axios.post("/api/clients", responseInfo)
+  },
+
+  responseBackup: function(responseInfo) {
+    return axios.post("/api/backup", responseInfo)
   },
 
   // retrieve responses
@@ -16,4 +20,5 @@ export default {
   deleteResponse: function(id) {
     return axios.delete(`/api/clients/${id}`)
   }
+
 }
