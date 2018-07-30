@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Form from '../components/Form';
 
 class Home extends Component {
 
@@ -10,6 +11,7 @@ class Home extends Component {
             <h1>Isabella Health</h1>
           </div>
         </div>
+        <Form />
       </div>
     )
   }
