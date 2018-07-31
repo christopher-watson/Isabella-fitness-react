@@ -48,6 +48,7 @@ class Clients extends Component {
                       <p>
                         <a className="userEmail" href={`mailto:${response.email}`}>{response.email}</a>
                       </p>
+                      <p>{response.phone}</p>
                       <p>{response.message}</p>
                       <DeleteModal {...response}/>
                     </li>

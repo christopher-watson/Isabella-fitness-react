@@ -19,6 +19,10 @@ export default {
   // delete responses
   deleteResponse: function(id) {
     return axios.delete(`/api/clients/${id}`)
-  }
+  },
 
+  // send form to backend
+  sendEmail: function(message) {
+    return axios.post('/api/mail/', message)
+  }
 }
