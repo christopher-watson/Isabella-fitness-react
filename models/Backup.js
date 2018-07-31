@@ -10,6 +10,10 @@ const backupSchema = new Schema ({
     type: String, 
     default: 'No Message' 
   },
+  phone: { 
+    type: String, 
+    default: 'No Phone' 
+  },
   email: { 
     type: String, 
     default: 'No Email' 

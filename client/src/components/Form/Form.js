@@ -6,6 +6,7 @@ export default class Form extends React.Component {
   state = {
     name: "",
     email: "",
+    phone: "",
     message: "",
     open: false
   };
@@ -28,9 +29,18 @@ export default class Form extends React.Component {
   submit = (e) => {
     e.preventDefault();
     API
+      .sendEmail({
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+        message: this.state.message
+      })
+      .catch(err => console.log(err.response.data))
+    API
       .responseSubmit({
         name: this.state.name,
         email: this.state.email,
+        phone: this.state.phone,
         message: this.state.message,
       })
       .catch(err => console.log(err.response.data))
@@ -38,6 +48,7 @@ export default class Form extends React.Component {
       .responseBackup({
         name: this.state.name,
         email:this.state.email,
+        phone: this.state.phone,
         message: this.state.message,
       })
       .catch(err => console.log(err.response.data));
@@ -48,6 +59,7 @@ export default class Form extends React.Component {
     this.setState({
       name: "",
       email: "",
+      phone: "",
       message: "",
       open: false
     })
@@ -73,6 +85,24 @@ export default class Form extends React.Component {
                 required />
               <div className="invalid-feedback">
                 Please provide your name
+              </div>
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="col-md-7 mb-3">
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                type="number"
+                className="form-control"
+                id="phone"
+                name="phone"
+                value={this.state.phone}
+                onChange={this.handleInputChange}
+                placeholder="555-555-5555"
+                required />
+              <div className="invalid-feedback">
+                Please provide your phone number
               </div>
             </div>
           </div>
