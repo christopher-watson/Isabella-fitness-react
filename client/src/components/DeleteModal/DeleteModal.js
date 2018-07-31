@@ -1,4 +1,5 @@
 import React from 'react';
+// import ReactDOM from 'react-dom';
 import Modal from 'react-responsive-modal';
 import API from "../../utils/API";
 
@@ -40,3 +41,5 @@ export default class DeleteModal extends React.Component {
     );
   }
 }
+
+// ReactDOM.render(<App />, document.getElementById('app'));
