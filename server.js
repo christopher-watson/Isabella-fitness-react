@@ -3,6 +3,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const routes = require('./routes');
 const mongoose = require('mongoose');
+// const http = require("http");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -25,6 +26,11 @@ app.get("*", (req, res) => {
 
 // db
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/isaFitDb');
+
+// server ping
+// setInterval(function() {
+//   http.get("http://<your app name>.herokuapp.com");
+// }, 3000000);
 
 // server
 app.listen(PORT, () => {
