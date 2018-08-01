@@ -1,10 +1,12 @@
-require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const creds = require('./config');
+// const dotenv = require('dotenv')
 
-const transport = {
+// dotenv.load({ path: '.env' })
+
+let transport = {
   host: 'smtp.gmail.com',
   auth: {
     user: creds.USER,
@@ -12,7 +14,7 @@ const transport = {
   }
 }
 
-const transporter = nodemailer.createTransport(transport)
+let transporter = nodemailer.createTransport(transport)
 
 transporter.verify((error, success) => {
   if (error) {
