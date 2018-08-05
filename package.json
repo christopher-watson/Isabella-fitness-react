@@ -40,7 +40,6 @@
     "react-modal": "^3.5.1",
     "react-moment": "^0.7.9",
     "react-responsive-modal": "^3.2.0",
-    "react-router-dom": "^4.3.1",
-    "react-waypoint": "^8.0.3"
+    "react-router-dom": "^4.3.1"
   }
 }

@@ -54,7 +54,6 @@ class Navbar extends Component {
           <StyleRoot> 
             <img 
               src={logo} 
-              id='navLogo'
               alt="Isabella"
               style={ this.state.logoHide ? styles.hiddenLogo : styles.displayLogo }/>
           </StyleRoot>
