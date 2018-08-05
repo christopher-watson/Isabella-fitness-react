@@ -11,9 +11,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/clients" component={Clients} />
-        <Route
-          render={() => <h1 className="text-center mt-5">Page Not Found!</h1>}
-        />
+        <Route render={() => <h1 className="text-center mt-5">Page Not Found!</h1>} />
       </Switch>
     </div>
   </Router>
