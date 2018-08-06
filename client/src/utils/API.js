@@ -24,5 +24,26 @@ export default {
   // send form to backend
   sendEmail: function(message) {
     return axios.post('/api/mail/', message)
-  }
+  },
+
+  // user login
+  login: function(loginCreds) {
+    return axios.post('/api/user/login', loginCreds)
+  },
+
+  // check login
+  loginCheck: function() {
+    return axios.get('/api/user/login')
+  },
+
+  // logout
+  logout: function() {
+    return axios.get('/api/user/logout')
+  },
+
+  // register 
+  register: function(userInfo) {
+    console.log(userInfo);
+    return axios.post("/api/user/register", userInfo)
+  },
 }

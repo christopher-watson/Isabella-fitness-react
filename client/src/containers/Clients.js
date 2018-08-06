@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import DeleteModal from "../components/DeleteModal";
 import moment from "moment";
+import { Redirect } from "react-router-dom";
 
 class Clients extends Component {
   state = {
+    isLoggedIn: true,
+    username: "",
     responses: []
   }
 
   componentDidMount() {
+    this.loginCheck();
     this.getClientResponses();
   }
 
@@ -24,7 +28,23 @@ class Clients extends Component {
       .catch(err => console.log(err))
   }
 
+  loginCheck = () => {
+    API
+      .loginCheck()
+      .then(res => this.setState({
+        isLoggedIn: res.data.isLoggedIn, username: res.data.username
+      }))
+      .catch(err => {
+        console.log(err);
+        this.setState({isLoggedIn: false})
+      })
+  }
+
   render() {
+    if (!this.state.isLoggedIn) {
+      return <Redirect to="/"/>
+    }
+
     return (
       <div>
         <div className="jumbotron jumbotron-fluid py-5">
@@ -57,7 +77,6 @@ class Clients extends Component {
             </div>
           </div>
         </div>
-    
       </div>
     )
   }

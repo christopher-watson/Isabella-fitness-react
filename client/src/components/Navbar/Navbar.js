@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logo from '../Images/Logo/logo1.png'
 import Radium, { StyleRoot } from 'radium';
 import { fadeIn } from 'react-animations';
+import API from '../../utils/API'
 
 const styles = {
   navStyle: {
@@ -21,17 +22,19 @@ const styles = {
     width: 200,
     marginLeft: 10
   }
-
 }
 
 class Navbar extends Component {
 
   state = {
-    logoHide: true
+    logoHide: true,
+    isLoggedIn: true,
+    username: ""
   }
 
   componentDidMount(){
     window.addEventListener('scroll', this.handleScroll);
+    this.loginCheck();
   }
 
   handleScroll = () => {
@@ -47,6 +50,18 @@ class Navbar extends Component {
     }
   }
 
+  loginCheck = () => {
+    API
+      .loginCheck()
+      .then(res => this.setState({
+        isLoggedIn: res.data.isLoggedIn, username: res.data.username
+      }))
+      .catch(err => {
+        console.log(err);
+        this.setState({isLoggedIn: false})
+      })
+  }
+
   render () {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light" style={styles.navStyle}>
@@ -58,13 +73,21 @@ class Navbar extends Component {
               style={ this.state.logoHide ? styles.hiddenLogo : styles.displayLogo }/>
           </StyleRoot>
         </NavLink>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse" id="navbarNav" style={styles.navIcons}>
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink className="nav-link" to="/">Home </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/clients">Clients</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to={this.state.isLoggedIn ? "/logout" : "/login"}>
+                {this.state.isLoggedIn 
+                  ? <span>Logout</span>
+                  : <span>Login</span>
+                }
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -73,7 +96,4 @@ class Navbar extends Component {
   }
 }
 
-
-
 export default Navbar;
-
