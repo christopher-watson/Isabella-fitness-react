@@ -46,7 +46,7 @@ class Clients extends Component {
     }
 
     return (
-      <div>
+      <div className="body">
         <div className="jumbotron jumbotron-fluid py-5">
           <div className="row align-items-center justify-content-center my-5">
             <h1>Client Responses</h1>

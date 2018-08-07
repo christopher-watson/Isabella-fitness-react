@@ -4,8 +4,8 @@ import API from "../utils/API";
 class Login extends Component {
   state = {
     isLoggedIn: true,
-    username: "",
-    password: "",
+    username: '',
+    password: '',
     error: false
   }
 
@@ -21,7 +21,7 @@ class Login extends Component {
       }))
       .catch(err => {
         console.log(err);
-        this.setState({isLoggedIn: false})
+        this.setState({ isLoggedIn: false })
       })
   }
 
@@ -57,7 +57,7 @@ class Login extends Component {
 
   render() { 
     return (
-      <div>
+      <div className="body">
         <div className="jumbotron jumbotron-fluid py-5">
           <div className="row align-items-center justify-content-center my-5">
             <h1>Admin Login</h1>
@@ -101,5 +101,4 @@ class Login extends Component {
   }
 }
   
-  export default Login;
-
+export default Login;

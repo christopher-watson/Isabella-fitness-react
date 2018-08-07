@@ -6,11 +6,6 @@ import { fadeIn } from 'react-animations';
 import API from '../../utils/API'
 
 const styles = {
-  navStyle: {
-    position: 'fixed',
-    width: '100%',
-    zIndex: 5
-  },
   hiddenLogo: {
     width: 200,
     marginLeft: 10,
@@ -21,7 +16,17 @@ const styles = {
     animationName: Radium.keyframes(fadeIn, 'fadeIn'),
     width: 200,
     marginLeft: 10
+  },
+  hideBackground: {
+    background: 'none'
+  },
+  displayBackground: {
+    backgroundColor: 'blue',
+    WebkitTransition: 'background-color 1000ms linear',
+    msTransition: 'background-color 1000ms linear',
+    transition: 'background-color 1000ms linear'
   }
+
 }
 
 class Navbar extends Component {
@@ -63,21 +68,25 @@ class Navbar extends Component {
 
   render () {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light" style={styles.navStyle}>
-        <NavLink className="navbar-brand" to="/">
+      <nav className="nav-bar" 
+      style={ this.state.logoHide ? styles.hideBackground : styles.displayBackground }>
+        <NavLink className="logo-div" to="/">
           <StyleRoot> 
             <img 
-              src={logo} 
+              src={logo}
+              id="logo" 
               alt="Isabella"
               style={ this.state.logoHide ? styles.hiddenLogo : styles.displayLogo }/>
           </StyleRoot>
         </NavLink>
-        <div className="collapse navbar-collapse" id="navbarNav" style={styles.navIcons}>
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Home</NavLink>
-            </li>
-            <li className="nav-item">
+        <div className="icon-div" style={styles.navIcons}>
+          <ul className="icon-ul">
+            {/* <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+              <span title="Home"><i className="fas fa-home" alt="home"></i></span>
+              </NavLink>
+            </li> */}
+            <li className="icon-item">
               <NavLink className="nav-link" to="/clients">
                 {
                   this.state.isLoggedIn
@@ -86,7 +95,22 @@ class Navbar extends Component {
                 }
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="icon-item">
+              <a className="nav-link" href='https://www.facebook.com/IsabellaFitness/' target="_blank" rel="noopener noreferrer">
+              <span title="Facebook"><i className="fab fa-facebook" alt="facebook"></i></span>
+              </a>
+            </li>
+            <li className="icon-item">
+              <a className="nav-link" href='https://www.instagram.com/isabella_fitness_/' target="_blank" rel="noopener noreferrer">
+              <span title="Instagram"><i className="fab fa-instagram" alt="instagram"></i></span>
+              </a>
+            </li>
+            <li className="icon-item">
+              <a className="nav-link" href='https://twitter.com/IsabellaFitness' target="_blank" rel="noopener noreferrer">
+              <span title="Twitter"><i className="fab fa-twitter" alt="twitter"></i></span>
+              </a>
+            </li>
+            <li className="icon-item">
               <NavLink className="nav-link" to={this.state.isLoggedIn ? "/logout" : "/login"}>
                 {
                   this.state.isLoggedIn 
