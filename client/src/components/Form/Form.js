@@ -8,7 +8,12 @@ export default class Form extends React.Component {
     email: "",
     phone: "",
     message: "",
-    open: false
+    open: false,
+    nameInvalid: false,
+    emailInvalid: false,
+    phoneInvalid: false,
+    messageInvalid: false,
+    formInvalid: true,
   };
 
   onOpenModal = () => {
@@ -17,13 +22,15 @@ export default class Form extends React.Component {
 
   onCloseModal = () => {
     this.setState({ open: false });
+    this.clearResponse();
   };
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    })
+    this.setState({ 
+      [name]: value 
+    });
+    this.validateForm();
   };
 
   submit = (e) => {
@@ -54,15 +61,77 @@ export default class Form extends React.Component {
       .catch(err => console.log(err.response.data));
     this.onOpenModal();
   };
-
+  
   clearResponse = () =>{
     this.setState({
       name: "",
       email: "",
       phone: "",
       message: "",
-      open: false
+      open: false,
+      formInvalid: true
     })
+  }
+
+  validateField = (fieldName, value) => {
+    let nameInvalid = this.state.nameInvalid;
+    let emailInvalid = this.state.emailInvalid;
+    let phoneInvalid = this.state.phoneInvalid;
+    let messageInvalid = this.state.messageInvalid;
+
+    switch(fieldName) {
+      case 'name':
+        nameInvalid = value.match(/^\s*[a-zA-Z,\s]+\s*$/i);
+        if(!nameInvalid){
+          this.setState({ nameInvalid: true })
+        }
+        if(this.state.name === '' || nameInvalid){
+          this.setState({ nameInvalid: false })
+        }
+        this.validateForm();
+        break;
+      case 'email':
+        emailInvalid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        if(!emailInvalid){
+          this.setState({ emailInvalid: true })
+        }
+        if(this.state.email === '' || emailInvalid){
+          this.setState({ emailInvalid: false })
+        }
+        this.validateForm();
+        break;
+      case 'phone':
+        phoneInvalid = value.match(/^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/i);
+        if(!phoneInvalid){
+          this.setState({ phoneInvalid: true })
+        }
+        if(this.state.phone === '' || phoneInvalid){
+          this.setState({ phoneInvalid: false })
+        }
+        this.validateForm();
+        break;
+      case 'message':
+        messageInvalid = value.length() > 1;
+        if(!messageInvalid){
+          this.setState({ messageInvalid: true })
+        }
+        if(this.state.message === '' || messageInvalid){
+          this.setState({ messageInvalid: false })
+        }
+        this.validateForm();
+        break;
+      default:
+        break;
+    }
+  }
+
+  validateForm = () => { 
+    if(this.state.name !== '' && this.state.email !== '' && this.state.phone !== '' && this.state.message !== ''){
+      this.setState({ formInvalid: false })
+    }
+    else{
+      this.setState({ formInvalid: true })
+    }
   }
 
   render( ) {
@@ -82,10 +151,11 @@ export default class Form extends React.Component {
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 placeholder="Name"
-                required />
-              <div className="invalid-feedback">
-                Please provide your name
-              </div>
+                onBlur={() => this.validateField('name', this.state.name)}
+                 />
+              <small id="nameError" className="form-text text-danger">
+                {this.state.nameInvalid ? 'Please enter a name' : ''}
+              </small>
             </div>
           </div>
 
@@ -93,17 +163,18 @@ export default class Form extends React.Component {
             <div className="col-md-7 mb-3">
               <label htmlFor="phone">Phone Number</label>
               <input
-                type="number"
+                type="text"
                 className="form-control"
                 id="phone"
                 name="phone"
-                value={this.state.phone}
+                value={this.state.phone.toString()}
                 onChange={this.handleInputChange}
                 placeholder="555-555-5555"
-                required />
-              <div className="invalid-feedback">
-                Please provide your phone number
-              </div>
+                onBlur={() => this.validateField('phone', this.state.phone)}
+                 />
+              <small id="phoneError" className="form-text text-danger">
+                {this.state.phoneInvalid ? 'Invalid Phone Number' : ''}
+              </small>
             </div>
           </div>
 
@@ -118,10 +189,11 @@ export default class Form extends React.Component {
                 value={this.state.email}
                 onChange={this.handleInputChange}
                 placeholder="Email"
-                required />
-              <div className="invalid-feedback">
-                Please provide your email address
-              </div>
+                onBlur={() => this.validateField('email', this.state.email)}
+                 />
+              <small id="emailError" className="form-text text-danger">
+                {this.state.emailInvalid ? 'Invalid Email Address' : ''}
+              </small>
             </div>
           </div>
 
@@ -135,8 +207,7 @@ export default class Form extends React.Component {
                 name="message"
                 value={this.state.message}
                 onChange={this.handleInputChange}
-                rows="3"
-                required>
+                rows="3">
               </textarea>
             </div>
           </div>
@@ -145,6 +216,7 @@ export default class Form extends React.Component {
             className="btn btn-primary mt-2"
             id="contactInfoSubmit"
             type="button"
+            disabled={this.state.formInvalid}
             onClick={this.submit}
           >Submit</button>
         </form>
