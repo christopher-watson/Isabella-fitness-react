@@ -5,10 +5,11 @@ import Home from "./containers/Home";
 import Clients from "./containers/Clients";
 import Login from "./containers/Login";
 import Logout from "./containers/Logout";
+import "./App.css";
 
 const App = () => (
   <Router>
-    <div>
+    <div className='wrapper'>
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />

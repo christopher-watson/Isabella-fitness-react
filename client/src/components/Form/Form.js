@@ -120,6 +120,7 @@ export default class Form extends React.Component {
         }
         this.validateForm();
         break;
+        
       default:
         break;
     }
@@ -167,7 +168,7 @@ export default class Form extends React.Component {
                 className="form-control"
                 id="phone"
                 name="phone"
-                value={this.state.phone.toString()}
+                value={this.state.phone}
                 onChange={this.handleInputChange}
                 placeholder="555-555-5555"
                 onBlur={() => this.validateField('phone', this.state.phone)}
