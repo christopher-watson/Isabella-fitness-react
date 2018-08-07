@@ -25,7 +25,6 @@ const styles = {
 }
 
 class Navbar extends Component {
-
   state = {
     logoHide: true,
     isLoggedIn: true,
@@ -76,16 +75,23 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="navbarNav" style={styles.navIcons}>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">Home </NavLink>
+              <NavLink className="nav-link" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/clients">Clients</NavLink>
+              <NavLink className="nav-link" to="/clients">
+                {
+                  this.state.isLoggedIn
+                  ? <span title="Responses"><i className="fas fa-envelope" alt="envelope"></i></span>
+                  : <span></span>
+                }
+              </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to={this.state.isLoggedIn ? "/logout" : "/login"}>
-                {this.state.isLoggedIn 
-                  ? <span>Logout</span>
-                  : <span>Login</span>
+                {
+                  this.state.isLoggedIn 
+                  ? <span title="Logout"><i className="fas fa-sign-out-alt" alt="logout"></i></span>
+                  : <span title="Login"><i className="fas fa-sign-in-alt" alt="login"></i></span>
                 }
               </NavLink>
             </li>
