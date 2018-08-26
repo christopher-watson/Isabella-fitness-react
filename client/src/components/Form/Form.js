@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
 import API from "../../utils/API";
+import './Form.css';
 
 export default class Form extends React.Component {
   state = {
@@ -138,7 +139,7 @@ export default class Form extends React.Component {
   render( ) {
     const { open } = this.state;
     return (
-      <div className="container">
+      <div className="form">
         <h3>Submit a Form</h3>
         <form>
           <div className="form-row">
