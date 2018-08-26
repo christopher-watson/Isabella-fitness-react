@@ -21,10 +21,10 @@ const styles = {
     background: 'none'
   },
   displayBackground: {
-    backgroundColor: 'blue',
-    WebkitTransition: 'background-color 1000ms linear',
-    msTransition: 'background-color 1000ms linear',
-    transition: 'background-color 1000ms linear'
+    backgroundColor: `var(--grey)`,
+    WebkitTransition: 'background-color 500ms linear',
+    msTransition: 'background-color 500ms linear',
+    transition: 'background-color 500ms linear'
   }
 
 }
@@ -68,8 +68,8 @@ class Navbar extends Component {
 
   render () {
     return (
-      <nav className="nav-bar" 
-      style={ this.state.logoHide ? styles.hideBackground : styles.displayBackground }>
+      <nav className="nav-bar"
+        style= {this.state.logoHide ? styles.hideBackground : styles.displayBackground}>
         <NavLink className="logo-div" to="/">
           <StyleRoot> 
             <img 
