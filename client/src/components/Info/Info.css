@@ -1,3 +1,4 @@
+/* global stuff */
 .info {
   grid-area: info;
   display: grid;
@@ -6,11 +7,11 @@
   grid-template-rows: repeat(5, min-content);
   grid-template-columns: 1fr;
   grid-template-areas: 
-  "row1" 
-  "row2" 
-  "row3" 
-  "row4" 
-  "row5";
+    "row1" 
+    "row2" 
+    "row3" 
+    "row4" 
+    "row5";
 }
 
 .row {
@@ -25,9 +26,22 @@
   color: var(--white);
 }
 
-/* ROW1 */
-.row1 {
-  grid-area: row1;
+.green-text{
+  margin-bottom: 0;
+  font-family: 'Great Vibes', Arial, Helvetica, serif;
+  font-size: 1.8em;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 20px var(--white);
+  color: var(--green);
+}
+
+.info-button {
+  z-index: 5;
+  margin: 0 !important;
+}
+
+/* left row stuff */
+.left-row {
   display: grid;
   grid-template-columns: minmax(min-content, 1fr) 3fr;
   grid-template-rows: 400px;
@@ -130,15 +144,6 @@
   grid-area: left-row-b-text2;
 }
 
-.green-text{
-  margin-bottom: 0;
-  font-family: 'Great Vibes', Arial, Helvetica, serif;
-  font-size: 1.8em;
-  letter-spacing: 1.5px;
-  text-shadow: 0 0 20px var(--white);
-  color: var(--green);
-}
-
 .left-row-b-inner-text{
   grid-area: left-row-b-text3;
   padding: 20px 0;
@@ -151,8 +156,137 @@
   color: var(--black);
 }
 
-.info-button {
-  z-index: 5;
+
+/* right row stuff */
+.right-row {
+  display: grid;
+  grid-template-columns: 3fr minmax(min-content, 1fr);
+  grid-template-rows: 400px;
+  grid-template-areas: "right-row-b-area right-row-a-area";
+}
+
+.right-row-a-area {
+  grid-area: right-row-a-area;
+  display: grid;
+  border-left: 2px solid var(--white);
+  padding: 10px;
+}
+
+.right-row-a-container {
+  align-self: center;
+}
+
+.right-row-a-text {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  grid-template-rows: 70px;
+  grid-template-areas: "right-row-L right-row-R";
+  width: 290px;
+  height: min-content;
+  margin: auto;
+}
+
+.right-icon {
+  grid-area: right-row-L;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.right-row-inner-text {
+  grid-area: right-row-R;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.right-row-a-top {
+  margin-top: 10px;
+}
+
+.right-row-b-area {
+  grid-area: right-row-b-area;
+  display: grid;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.right-row-b-area::after{
+  content: "";
+  background: 
+    var(--black)
+    url('../Images/isabella.jpg')
+    center center / cover
+    no-repeat;
+  background-blend-mode: luminosity;
+  z-index: 1;
+  opacity: .1;
+}
+
+.right-row-b-container{
+  display: grid;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background: var(--GREENdientALT);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.right-row-b-text {
+  align-self: center;
+  text-align: right;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(4, min-content);
+  grid-template-areas: 
+    "gap right-row-b-text1"
+    "gap right-row-b-text2"
+    "gap right-row-b-text3"
+    "gap right-row-b-text4";
+  height: min-content;
+  opacity: 1;
+}
+
+.right-row-b-h1 {
+  grid-area: right-row-b-text1;
+  font-size: 3em;
+  font-family: 'Alfa Slab One', Arial, sans-serif;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px var(--grey);
+}
+
+.right-b-area-highlight {
+  grid-area: right-row-b-text2;
+}
+
+.right-row-b-inner-text {
+  grid-area: right-row-b-text3;
+  padding: 20px 0;
+}
+
+.right-row-b-button {
+  grid-area: right-row-b-text4;
+  display: grid;
+  width: min-content;
+  color: var(--black);
+  justify-self: right;
+}
+
+
+/* specifics */
+.row1 {
+  grid-area: row1;
+}
+
+.row2 {
+  grid-area: row2;
+}
+
+.row3 {
+  grid-area: row3;
 }
 
 @media only screen and (max-width: 700px) {
@@ -160,7 +294,7 @@
     font-size: 3em;
   }
   
-  .row1 {
+  .left-row {
     grid-template-columns: 90px 1fr;
   }
   
@@ -190,4 +324,32 @@
   .green-text{
     font-size: 1.3em;
   }
+
+  .right-row {
+    grid-template-columns: 1fr 90px;
+  }
+  
+  .right-row-a-text {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .right-row-b-text {
+    padding: 0;
+    margin-right: 25px;
+  }
+
+  .right-icon {
+    width: 100%;
+    padding: 0;
+  }
+
+  .right-row-inner-text{
+    display: none;
+  }
+
+  .right-row-b-h1 {
+    font-size: 2em;
+  }
+  
 }

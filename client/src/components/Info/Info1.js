@@ -5,7 +5,7 @@ import '../../fonts.css';
 export default class Info1 extends Component {
   render() {
     return (
-      <div className="info info1">
+      <div className="info1">
         <div className="row row1 left-row">
           <div className="left-row-a-area">
             <div className="left-row-a-container">
