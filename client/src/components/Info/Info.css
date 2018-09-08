@@ -12,12 +12,12 @@
     "row3" 
     "row4" 
     "row5";
+  border-bottom: 2px solid var(--white);
 }
 
 .row {
   margin: 0;
   border-top: 2px solid var(--white);
-  border-bottom: 1px solid var(--white);
   background: var(--black);
 }
 
@@ -36,7 +36,7 @@
 }
 
 .info-button {
-  z-index: 5;
+  z-index: 4;
   margin: 0 !important;
 }
 

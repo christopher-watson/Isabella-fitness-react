@@ -1,0 +1,150 @@
+/* global stuff */
+.slide {
+  grid-area: slide;
+  width: 100vw;
+  height: 80vh;
+  background:
+    var(--opaque2)
+    url('../Images/isabella.jpg')
+    center center / cover
+    no-repeat;
+  background-blend-mode: multiply;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-areas: 
+    " . slide-nav . "
+    "ss ss ss"
+}
+
+.sliders {
+  grid-area: slide-nav;
+  display: flex;
+}
+
+.slider {
+  background: var(--red);
+  margin: 20px 10px !important;
+  border-radius: 25px;
+}
+
+[state=hidden] {
+  opacity: 0;
+  transition: opacity 1.2s;
+  -webkit-transition: opacity 1.2s;
+}
+
+[state=active] {
+  opacity: 1;
+  transition: opacity 1.2s;
+  -webkit-transition: opacity 1.2s;
+}
+
+/* first slide */
+.slide1 {
+  grid-area: ss;
+  /* background: var(--grey); */
+  display: grid;
+  height: 100%;
+  grid-template-rows: min-content;
+  grid-template-columns: minmax(10px, .10fr) 1fr minmax(10px, .10fr);
+  grid-template-areas: 
+    " . content . "
+}
+
+.slide1-container {
+  grid-area: content;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    "top-row"
+    "bottom-row";
+  margin-top: 2%;
+}
+
+.top-row{ 
+  grid-area: top-row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content;
+  grid-template-areas:
+   "box1 box2 box3";
+  justify-items: center;
+}
+
+.box {
+  text-align: center;
+}
+
+.heading-text {
+  font-size: 2.5em;
+}
+
+.background-text {
+  background: var(--greenALT);
+  padding: 5px 0;
+  font-size: 1.8em;
+}
+
+.bottom-row {
+  grid-area: bottom-row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+   "left right";
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.bottom-box-left{
+  grid-area: left;
+}
+
+.bottom-box-right {
+  grid-area: right;
+}
+
+.underline-text {
+  grid-area: left-top;
+  border-bottom: 2px solid var(--white);
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.bottom-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    "left-top left-top"
+    "left-inner-left left-inner-right";
+}
+
+.bottom-box>.slide-text-left {
+  grid-area: left-inner-left;
+  margin-right: 5px;
+  justify-items: right;
+  text-align: right;
+}
+
+.bottom-box>.slide-text-right {
+  grid-area: left-inner-right;
+  margin-left: 5px;
+  color: var(--green);
+}
+
+/* second slide */
+.slide2 {
+  grid-area: ss;
+  /* background: var(--green); */
+  display: grid;
+}
+
+.slide3 {
+  grid-area: ss;
+  /* background: var(--white); */
+  display: grid;
+}
+
