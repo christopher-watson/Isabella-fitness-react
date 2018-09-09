@@ -5,6 +5,7 @@ import Jumbo from '../components/Jumbo';
 import Info1 from '../components/Info/Info1';
 import Info2 from '../components/Info/Info2';
 import Info3 from '../components/Info/Info3';
+import Slide from '../components/Slide';
 
 class Home extends Component {
   state = {
@@ -38,6 +39,7 @@ class Home extends Component {
           <Info2 />
           <Info3 />
         </div>
+        <Slide />
       </div>
     )
   }
