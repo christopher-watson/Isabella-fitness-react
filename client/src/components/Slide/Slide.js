@@ -151,12 +151,222 @@ export default class Slide extends Component {
         <div 
           className="slide2" 
           state={this.state.slide2 ? 'active' : 'hidden'}>
-          Himenaeos nostra tortor felis nec porttitor phasellus tristique egestas auctor arcu sapien nam massa montes aliquam molestie etiam eleifend velit
+          <div className="slide2-container">
+            <div className="weekday-box">
+              <div className="schedule-box monday">
+                <div className="highlight monday-highlight">
+                  Monday
+                </div>
+                  <div className="schedule-time">
+                    <ul>
+                      <li>5:00 am</li>
+                      <li>6:00 am</li>
+                      <li>7:00 am</li>
+                      <li>8:00 am</li>
+                      <li>9:00 am</li>
+                      <li>10:00 am</li>
+                      <li>11:00 am</li>
+                      <li>12:00 pm</li>
+                      <li>1:00 pm</li>
+                      <li>1:00 pm</li>
+                    </ul>
+                  </div>
+                  <div className="schedule-type">
+                    <ul>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Not Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                    </ul>
+                  </div>
+              </div>
+              <div className="schedule-box tuesday">
+                <div className="highlight tuesday-highlight">
+                  Tuesday
+                </div>
+                  <div className="schedule-time">
+                    <ul>
+                      <li>5:00 am</li>
+                      <li>6:00 am</li>
+                      <li>7:00 am</li>
+                      <li>8:00 am</li>
+                      <li>9:00 am</li>
+                      <li>10:00 am</li>
+                      <li>11:00 am</li>
+                      <li>12:00 pm</li>
+                      <li>1:00 pm</li>
+                      <li>1:00 pm</li>
+                    </ul>
+                  </div>
+                  <div className="schedule-type">
+                    <ul>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Not Crossfit</li>
+                      <li>Crossfit</li>
+                    </ul>
+                  </div>
+              </div>
+              <div className="schedule-box wednesday">
+                <div className="highlight wednesday-highlight">
+                  Wednesday
+                </div>
+                  <div className="schedule-time">
+                    <ul>
+                      <li>5:00 am</li>
+                      <li>6:00 am</li>
+                      <li>7:00 am</li>
+                      <li>8:00 am</li>
+                      <li>9:00 am</li>
+                      <li>10:00 am</li>
+                      <li>11:00 am</li>
+                      <li>12:00 pm</li>
+                      <li>1:00 pm</li>
+                      <li>1:00 pm</li>
+                    </ul>
+                  </div>
+                  <div className="schedule-type">
+                    <ul>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Not Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                    </ul>
+                  </div>
+              </div>
+              <div className="schedule-box thursday">
+                <div className="highlight thursday-highlight">
+                  Thursday
+                </div>
+                  <div className="schedule-time">
+                    <ul>
+                      <li>5:00 am</li>
+                      <li>6:00 am</li>
+                      <li>7:00 am</li>
+                      <li>8:00 am</li>
+                      <li>9:00 am</li>
+                      <li>10:00 am</li>
+                      <li>11:00 am</li>
+                      <li>12:00 pm</li>
+                      <li>1:00 pm</li>
+                      <li>1:00 pm</li>
+                    </ul>
+                  </div>
+                  <div className="schedule-type">
+                    <ul>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Not Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                    </ul>
+                  </div>
+              </div>
+              <div className="schedule-box friday">
+                <div className="highlight friday-highlight">
+                  Friday
+                </div>
+                  <div className="schedule-time">
+                    <ul>
+                      <li>5:00 am</li>
+                      <li>6:00 am</li>
+                      <li>7:00 am</li>
+                      <li>8:00 am</li>
+                      <li>9:00 am</li>
+                      <li>10:00 am</li>
+                      <li>11:00 am</li>
+                      <li>12:00 pm</li>
+                      <li>1:00 pm</li>
+                      <li>1:00 pm</li>
+                    </ul>
+                  </div>
+                  <div className="schedule-type">
+                    <ul>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Not Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                      <li>Crossfit</li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+            <div className="weekend-box">
+              <div className="schedule-box saturday">
+                <div className="highlight saturday-highlight">
+                    Saturday
+                  </div>
+                    <div className="schedule-time">
+                      <ul>
+                        <li>5:00 am</li>
+                        <li>6:00 am</li>
+                        <li>7:00 am</li>
+                      </ul>
+                    </div>
+                    <div className="schedule-type">
+                      <ul>
+                        <li>Crossfit</li>
+                        <li>Crossfit</li>
+                        <li>Crossfit</li>
+                      </ul>
+                  </div>
+              </div>
+              <div className="schedule-box sunday">
+                <div className="highlight sunday-highlight">
+                    Sunday
+                  </div>
+                    <div className="schedule-time">
+                      <ul>
+                        <li>5:00 am</li>
+                        <li>6:00 am</li>
+                        <li>7:00 am</li>
+                      </ul>
+                    </div>
+                    <div className="schedule-type">
+                      <ul>
+                        <li>Crossfit</li>
+                        <li>Crossfit</li>
+                        <li>Crossfit</li>
+                      </ul>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div 
           className="slide3" 
           state={this.state.slide3 ? 'active' : 'hidden'}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos totam eaque dolores obcaecati odit optio nemo! Cupiditate, reprehenderit voluptatibus harum odit tenetur autem dolorem doloribus quod facere rerum aperiam perspiciatis?
+            <div className="slide3-container">
+              <div className="green-text">Whatever you want goes here!</div>
+            </div>
         </div>
       </div>
     )
