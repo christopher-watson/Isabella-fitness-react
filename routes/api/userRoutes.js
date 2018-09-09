@@ -10,8 +10,8 @@ router
     res.json(req.user);
   })
   .get(function(req, res) {
-    console.log(req.user.username);
     if (req.user) {
+      console.log(req.user.username);
       res.json({isLoggedIn: true, username: req.user.username});
     } else {
       res.json(false);

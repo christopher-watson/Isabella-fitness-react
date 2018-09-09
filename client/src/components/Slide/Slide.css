@@ -1,13 +1,13 @@
 /* global stuff */
 .slide {
   grid-area: slide;
-  width: 100vw;
+  width: 100%;
   height: min-content;
   background:
-    var(--opaque2)
-    url('../Images/isabella.jpg')
-    center center / cover
-    no-repeat;
+  var(--opaque2)
+  url('../Images/isabella.jpg')
+  center center / cover
+  no-repeat;
   background-blend-mode: multiply;
   display: grid;
   grid-template-rows: min-content 1fr;
@@ -46,6 +46,7 @@
   grid-area: ss;
   display: grid;
   height: 100%;
+  width: 100vw;
   grid-template-rows: min-content;
   grid-template-columns: minmax(10px, .10fr) 1fr minmax(10px, .10fr);
   grid-template-areas: 
@@ -155,6 +156,7 @@
   grid-area: ss;
   display: grid;
   height: 100%;
+  width: 100vw;
   grid-template-rows: min-content;
   grid-template-columns: minmax(10px, .10fr) 1fr minmax(10px, .10fr);
   grid-template-areas: 
@@ -279,6 +281,7 @@
   grid-area: ss;
   display: grid;
   height: 100%;
+  width: 100vw;
   /* grid-template-rows: min-content; */
   grid-template-columns: minmax(10px, .10fr) 1fr minmax(10px, .10fr);
   grid-template-areas: 
@@ -297,6 +300,10 @@
 }
 
 @media only screen and (max-width: 1200px) {  
+  .slide1 {
+    align-content: center;
+  }
+
   .weekday-box {
     grid-area: weekday;
     display: grid;
