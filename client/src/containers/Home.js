@@ -6,6 +6,8 @@ import Info1 from '../components/Info/Info1';
 import Info2 from '../components/Info/Info2';
 import Info3 from '../components/Info/Info3';
 import Slide from '../components/Slide';
+import Bio1 from '../components/Bio/Bio1'
+import Bio2 from '../components/Bio/Bio2'
 
 class Home extends Component {
   state = {
@@ -40,6 +42,10 @@ class Home extends Component {
           <Info3 />
         </div>
         <Slide />
+        <div className="bio">
+          <Bio1 />
+          <Bio2 />
+        </div>
       </div>
     )
   }
