@@ -81,6 +81,18 @@
   padding: 0 1px;
 }
 
+.box1 {
+  grid-area: box1;
+}
+
+.box2 {
+  grid-area: box2;
+}
+
+.box3 {
+  grid-area: box3;
+}
+
 .heading-text {
   font-size: 2.5em;
 }
@@ -165,10 +177,11 @@
 .weekday-box {
   grid-area: weekday;
   display: grid;
-  grid-template-columns: repeat(5, min-content);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: min-content;
   grid-template-areas:
     "mon tue wed thurs fri";
-  justify-content: center;
+  justify-items: center;
 }
 
 .monday {
@@ -198,7 +211,6 @@
   grid-template-areas:
     "day day"
     "time event";
-  margin: 0 40px;
   justify-content: center;
 }
 
@@ -262,7 +274,6 @@
   background-color: coral;
 }
 
-
 /* slide three */
 .slide3 {
   grid-area: ss;
@@ -283,4 +294,105 @@
   justify-content: center;
   align-content: center;
   font-size: 3em;
+}
+
+@media only screen and (max-width: 1200px) {  
+  .weekday-box {
+    grid-area: weekday;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas:
+      ". mon tue wed ."
+      " . thurs . fri .";
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .sliders {
+    font-size: .8em;
+  }
+
+  .slide1 {
+    margin-bottom: 2em;
+  }
+  
+  .top-row{ 
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas:
+     "box1"
+     "box2"
+     "box3";
+  }
+  
+  .box {
+    width: 90%;
+    padding: 0 1px;
+    margin-bottom: 1.3em;
+  }
+  
+  .bottom-row {
+    grid-area: bottom-row;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas:
+     "left"
+     "right";
+    margin-top: 2em;
+  }
+  
+  .slide2 {
+    grid-area: ss;
+    display: grid;
+    height: 100%;
+    grid-template-rows: min-content;
+    grid-template-columns: minmax(10px, .10fr) 1fr minmax(10px, .10fr);
+    grid-template-areas: 
+      " . content2 . ";
+    margin-bottom: 50px;
+  }
+  
+  .slide2-container {
+    grid-area: content2;
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+      "weekday"
+      "weekend";
+    margin-top: 2%;
+  }
+  
+  .weekday-box {
+    grid-area: weekday;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, min-content);
+    grid-template-areas:
+      "mon"
+      "tue"
+      "wed"
+      "thurs"
+      "fri";
+  }
+  
+  .weekend-box {
+    grid-area: weekend;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas:
+      "sat"
+      "sun";
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .sliders {
+    font-size: .5em;
+  }
 }

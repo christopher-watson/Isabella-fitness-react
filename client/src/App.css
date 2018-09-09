@@ -18,7 +18,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--grey);
+  /* background: var(--grey); */
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   color: var(--white);
@@ -47,7 +47,7 @@ a:hover{
   grid-template-areas: 
    "nav" 
    "body";
-  background-color: var(--grey);
+  /* background-color: var(--grey); */
 }
 
 .nav-bar {
@@ -107,6 +107,15 @@ a:hover{
   cursor: pointer;
   background-color: initial;
   color: var(--white) !important;
+}
+
+.text-dark {
+  background: none;
+  border-top: none;
+}
+
+.home-button {
+  font-size: 35px;
 }
 
 @media only screen and (max-width: 1370px) { 

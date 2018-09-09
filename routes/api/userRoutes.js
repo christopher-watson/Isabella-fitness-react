@@ -10,7 +10,7 @@ router
     res.json(req.user);
   })
   .get(function(req, res) {
-    console.log(req.user);
+    console.log(req.user.username);
     if (req.user) {
       res.json({isLoggedIn: true, username: req.user.username});
     } else {
@@ -23,7 +23,7 @@ router
   .route('/logout')
   .get(function(req,res) {
     req.logout()
-    console.log(req.user);
+    console.log(req.user.username);
     res.json(false);
   })
 

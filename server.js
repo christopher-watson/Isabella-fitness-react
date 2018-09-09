@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 // middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ useNewUrlParser: true }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 

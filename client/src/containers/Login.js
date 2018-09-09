@@ -59,12 +59,17 @@ class Login extends Component {
     return (
       <div className="body">
         <div className="jumbotron jumbotron-fluid py-5">
-          <div className="row align-items-center justify-content-center my-5">
+          <div className="row align-items-center justify-content-center mt-5 text-dark">
             <h1>Admin Login</h1>
+          </div>
+          <div className="row align-items-center justify-content-center text-dark home-button">
+            <a href='/' rel="noopener noreferrer">
+              <span title="Home"><i className="fas fa-home" alt="Home"></i></span>
+            </a>
           </div>
         </div>
         <div className="container-fluid">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center text-dark">
             <div className="col-8">
               <form>
                 <div className="form-group">

@@ -37,7 +37,7 @@ class Logout extends Component {
     return (
       <div>
         <div className="container-fluid py-5">
-          <div className="row align-items-center justify-content-center my-5">
+          <div className="row align-items-center justify-content-center my-5 text-dark">
             <StyleRoot>
               <span style={styles.emojiStyle} role='img' aria-label='peace'>
                 ✌️
