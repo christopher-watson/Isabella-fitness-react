@@ -9,6 +9,7 @@ import Slide from '../components/Slide';
 import Bio1 from '../components/Bio/Bio1';
 import Bio2 from '../components/Bio/Bio2';
 import Map from '../components/Map';
+import Footer from '../components/Footer';
 
 class Home extends Component {
   state = {
@@ -48,6 +49,7 @@ class Home extends Component {
           <Bio2 />
         </div>
         <Map />
+        <Footer />
       </div>
     )
   }
