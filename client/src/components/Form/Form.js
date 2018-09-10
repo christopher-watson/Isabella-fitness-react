@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
 import API from "../../utils/API";
+import photo from '../Images/isabella.jpg'
 import './Form.css';
 
 export default class Form extends React.Component {
@@ -140,10 +141,13 @@ export default class Form extends React.Component {
     const { open } = this.state;
     return (
       <div className="form">
-        <h3>Submit a Form</h3>
-        <form>
-          <div className="form-row">
-            <div className="col-md-7 mb-3">
+        <div className="form-title">
+          <h3 className="title-text">Contact Us!</h3>
+          <img className="form-photo" src={photo} alt="Contact"/>
+        </div>
+        <div className="form-stuff">
+          <form>
+            <div className="form-name">
               <label htmlFor="nameInput">Name</label>
               <input
                 type="text"
@@ -154,15 +158,12 @@ export default class Form extends React.Component {
                 onChange={this.handleInputChange}
                 placeholder="Name"
                 onBlur={() => this.validateField('name', this.state.name)}
-                 />
+                  />
               <small id="nameError" className="form-text text-danger">
                 {this.state.nameInvalid ? 'Please enter a name' : ''}
               </small>
             </div>
-          </div>
-
-          <div className="form-row">
-            <div className="col-md-7 mb-3">
+            <div className="form-phone">
               <label htmlFor="phone">Phone Number</label>
               <input
                 type="text"
@@ -173,15 +174,12 @@ export default class Form extends React.Component {
                 onChange={this.handleInputChange}
                 placeholder="555-555-5555"
                 onBlur={() => this.validateField('phone', this.state.phone)}
-                 />
+                  />
               <small id="phoneError" className="form-text text-danger">
                 {this.state.phoneInvalid ? 'Invalid Phone Number' : ''}
               </small>
             </div>
-          </div>
-
-          <div className="form-row">
-            <div className="col-md-7 mb-3">
+            <div className="form-email">
               <label htmlFor="email">Email</label>
               <input
                 type="text"
@@ -192,15 +190,12 @@ export default class Form extends React.Component {
                 onChange={this.handleInputChange}
                 placeholder="Email"
                 onBlur={() => this.validateField('email', this.state.email)}
-                 />
+                  />
               <small id="emailError" className="form-text text-danger">
                 {this.state.emailInvalid ? 'Invalid Email Address' : ''}
               </small>
             </div>
-          </div>
-
-          <div className="form-row">
-            <div className="col-md-7 mb-3">
+            <div className="form-message">
               <label htmlFor="message">Message</label>
               <textarea 
                 type="text"
@@ -211,20 +206,19 @@ export default class Form extends React.Component {
                 onChange={this.handleInputChange}
                 rows="3">
               </textarea>
+              <button
+                className="btn btn-primary mt-2 submit-button"
+                id="contactInfoSubmit"
+                type="button"
+                disabled={this.state.formInvalid}
+                onClick={this.submit}
+              >Submit</button>
             </div>
-          </div>
-          
-          <button
-            className="btn btn-primary mt-2"
-            id="contactInfoSubmit"
-            type="button"
-            disabled={this.state.formInvalid}
-            onClick={this.submit}
-          >Submit</button>
-        </form>
+          </form>
+        </div>
         <Modal open={open} onClose={this.onCloseModal} center>
-          <h4>Submitted!</h4>
-          <p>Your response has been recorded</p>
+          <h4 className='text-dark'>Submitted!</h4>
+          <p className='text-dark'>Your response has been recorded</p>
           <button 
             className="btn btn-success offset-7" 
             onClick={this.clearResponse} 

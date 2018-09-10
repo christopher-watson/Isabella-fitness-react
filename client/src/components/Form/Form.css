@@ -1,3 +1,71 @@
 .form {
   grid-area: form;
+  color: var(--black);
+  background-color: var(--greenALT);
+  padding: 50px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "img-title form-stuff"
+}
+
+.form-stuff {
+  grid-area: form-stuff;
+}
+
+.form-title {
+  display: grid;
+}
+
+.title-text {
+  font-size: 3em;
+}
+
+form>.form-name {
+  width: 80%;
+  margin: 20px 0;
+}
+
+form>.form-phone {
+  width: 50%;
+  margin: 20px 0;
+}
+
+form>.form-email {
+  width: 60%;
+  margin: 20px 0;
+}
+
+form>.form-message {
+  width: 80%;
+  margin-top: 20px;
+}
+ 
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+
+.form-photo {
+  width: 90%;
+  justify-self: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .form{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+     "img-title"
+     "form-stuff"
+  }
+
+  .form-photo {
+    width: 100%;
+  }
+
+  .title-text {
+    font-size: 2em;
+  }
 }
