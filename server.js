@@ -3,7 +3,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const routes = require('./routes');
 const mongoose = require('mongoose');
-// const http = require("http");
+const http = require("http");
 const session = require('express-session');
 const morgan = require('morgan');
 const passport = require ('passport');
@@ -48,9 +48,9 @@ app.get("*", (req, res) => {
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/isaFitDb');
 
 // server ping
-// setInterval(function() {
-//   http.get("http://<your app name>.herokuapp.com");
-// }, 3000000);
+setInterval(function() {
+  http.get("http://<your app name>.herokuapp.com");
+}, 3000000);
 
 // server
 app.listen(PORT, () => {
