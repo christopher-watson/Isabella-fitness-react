@@ -3,7 +3,7 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  background-color: var(--grey);
+  background-color: var(--black);
 }
 
 .jumbo-div {
@@ -30,7 +30,7 @@
   grid-area: isa;
   font-family: 'Alfa Slab One', Arial, sans-serif;
   font-size: 5em;
-  text-shadow: 0 0 20px var(--black);
+  text-shadow: 0 0 20px var(--green);
   /* margin-bottom: -10px; */
 }
 
@@ -38,7 +38,7 @@
   grid-area: health;
   font-family: 'Great Vibes', Arial, Helvetica, serif;
   font-size: 3em;
-  text-shadow: 0 0 10px var(--black);
+  text-shadow: 0 0 10px var(--green);
   margin: -10px 0 10px -20px;
 }
 

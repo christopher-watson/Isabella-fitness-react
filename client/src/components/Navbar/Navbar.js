@@ -21,7 +21,7 @@ const styles = {
     background: 'none'
   },
   displayBackground: {
-    backgroundColor: `var(--grey)`,
+    backgroundColor: `var(--black)`,
     WebkitTransition: 'background-color 500ms linear',
     msTransition: 'background-color 500ms linear',
     transition: 'background-color 500ms linear'
