@@ -61,7 +61,6 @@ a:hover{
 .nav-bar {
   grid-area: nav;
   display: grid;
-  display: none;
   grid-template-columns: min-content 1fr min-content;
   grid-template-rows: 50px;
   grid-template-areas: 
