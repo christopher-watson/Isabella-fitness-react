@@ -12,7 +12,7 @@ export default class Bio1 extends Component {
         </div>
         <div className="bio-text">
           <div className="bio-name">
-            Ben Isabella
+            Benny Isabella
           </div>
           <div className="bio-title">
             The Boss 
