@@ -6,8 +6,9 @@ import Info1 from '../components/Info/Info1';
 import Info2 from '../components/Info/Info2';
 import Info3 from '../components/Info/Info3';
 import Slide from '../components/Slide';
-import Bio1 from '../components/Bio/Bio1'
-import Bio2 from '../components/Bio/Bio2'
+import Bio1 from '../components/Bio/Bio1';
+import Bio2 from '../components/Bio/Bio2';
+import Map from '../components/Map';
 
 class Home extends Component {
   state = {
@@ -46,6 +47,7 @@ class Home extends Component {
           <Bio1 />
           <Bio2 />
         </div>
+        <Map />
       </div>
     )
   }

@@ -137,6 +137,7 @@ form {
   width: 80%;
 }
 
+
 @media only screen and (max-width: 1370px) { 
   #root {
     display: grid;
